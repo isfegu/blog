@@ -40,7 +40,7 @@ A modo de rápido resumen, en el directorio `content` hay tantos archivos _Markd
 Para ver el blog en el entorno de desarrollo hay que ejecutar:
 
 ```bash
-$ hugo server -D
+~ hugo server -D
 ```
 
 Abrir en un navegador la URL: [http://localhost:1313/](http://localhost:1313/).
