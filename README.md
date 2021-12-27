@@ -32,3 +32,10 @@ Para hacer cambios en el aspecto visual el directorio que te interesa es `themes
 Para mejorar o aportar contenidos el directorio que te interesa es `content` y la documentación de Hugo al respecto del [_Content Management](https://gohugo.io/content-management/)_.
 
 A modo de rápido resumen, en el directorio `content` hay tantos archivos Markdown como entradas en el blog. A parte del contenido de la entrada, cada archivo tiene una cabecera, conocida como _[Front Matter](https://gohugo.io/content-management/front-matter/)_, que contiene ciertos metadatos que ayudan a Hugo a tomar cada archivo y darle forma de entrada de un blog.
+
+## Usage
+
+Para ver el blog en el entorno de desarrollo hay que ejecutar:
+
+```bash
+$ hugo server -D

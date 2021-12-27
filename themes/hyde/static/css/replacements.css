@@ -1,0 +1,35 @@
+a {
+    color: #900;
+}
+
+a:hover {
+    color: #B00;
+    text-decoration: none;
+}
+
+.sidebar-about a:hover {
+    text-decoration: none !important;
+}
+
+.post-title a:hover {
+    text-decoration: none !important;
+    color: #4e4e4e;
+}
+
+p.post-date {
+    font-size: 12px !important;
+}
+
+.highlight pre {
+    border-radius: 10px !important;
+    overflow: auto;
+    white-space: revert;
+}
+
+.read-more-link {
+    text-align: right;
+}
+
+.text-small {
+    font-size: 16px;
+}

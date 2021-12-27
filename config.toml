@@ -1,0 +1,8 @@
+baseURL = "https://apuntesderust.netlify.app/"
+title = "Aprendiz de todo, oficial de nada"
+languageCode = "es-es"
+theme = "hyde"
+enableGitInfo = "true"
+
+[params]
+  description = "Una serie de anotaciones útiles en mi largo, lento y tortuoso camino de aprendizaje de Rust junto con una serie de enlaces que encuentro interesantes o útiles."
