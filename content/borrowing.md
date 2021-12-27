@@ -3,6 +3,8 @@ title = "Borrowing: o cómo se gestiona la memoria en Rust (parte II)"
 summary = "En esta segunda entrega de mis anotaciones respecto la gestión de la memoria en Rust trato de explicar y entender cómo funciona el Copiar, el Mover y los Préstamos."
 slug = "borrowing-gestion-de-memoria-rust"
 date = "2021-12-27"
+categories = ['rust']
+tags = ['rust', 'memoria', 'borrowing', 'préstamos']
 +++
 
 > Este apunte es la segunda entrega de una serie de anotaciones que estoy haciendo respecto la gestión de la memoria en Rust.
