@@ -2,11 +2,35 @@
 <div class="post">
   <h1>{{ .Title }}</h1>
   <p class="post-date">Publicado el <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z0700" }}">{{ .Date.Format "2006-01-02"}}</time> y actualizado el <time datetime="{{ .Lastmod.Format " 2006-01-02T15:04:05Z0700" }}">{{ .Lastmod.Format "2006-01-02" }}</time></p>
-  {{ .Content }}
-</div>
+  <article>
+    {{ .Content }}
+  </article>
+  
+  <hr>
 
-{{ if .Site.DisqusShortname -}}
-<h2>Comments</h2>
-{{ template "_internal/disqus.html" . }}
-{{- end }}
+  <aside class="metadata">
+    {{ with .Params.categories }}
+    <div class="categories">
+      <p>Categorías:</p>
+      <ul>
+        {{ range . }}
+        <li><a href="{{ "tags/" | absURL }}{{ . | urlize }}">{{ . }}</a></li>
+        {{ end }}
+      </ul>
+    </div>
+    {{ end}}
+
+    {{ with .Params.tags }}
+    <div class="tags">
+      <p>Etiquetas:</p>
+      <ul>
+        {{ range . }}
+        <li><a href="{{ "tags/" | absURL }}{{ . | urlize }}">{{ . }}</a></li>
+        {{ end }}
+      </ul>
+    </div>
+    {{ end}}
+
+  </aside>
+</div>
 {{- end }}

@@ -5,4 +5,4 @@ theme = "hyde"
 enableGitInfo = "true"
 
 [params]
-  description = "Una serie de anotaciones útiles en mi largo, lento y tortuoso camino de aprendizaje de Rust junto con una serie de enlaces que encuentro interesantes o útiles."
+  description = "Apuntes que me fuerzo a escribir para tratar de entender mejor."

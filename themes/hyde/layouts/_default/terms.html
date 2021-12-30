@@ -1,0 +1,15 @@
+{{ define "main" }}
+<div class="posts">
+    <h1>Listado de {{ .Data.Plural }}</h1>
+    {{ $data := .Data }}
+    <ul>
+    {{ range $key, $value := .Data.Terms.ByCount }}
+        {{ if ($value.Name) }}
+        <li>
+            <a href="{{ "tags/" | relURL }}{{ $value.Name | urlize }}">{{ $value.Name | upper }} <span>({{ $value.Count }})</span></a>
+        </li>
+        {{ end }}
+    {{ end }}
+    </ul>
+</div>
+{{ end }}

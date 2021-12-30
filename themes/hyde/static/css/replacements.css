@@ -33,3 +33,25 @@ p.post-date {
 .text-small {
     font-size: 16px;
 }
+
+.metadata {
+    background-color: #FDF1DB;
+    border-radius: 10px;
+    display: flex;
+    padding: 1rem 0 1rem 0;
+}
+
+.metadata p {
+    font-weight: 800;
+    padding: 0;
+    margin: 0;
+}
+
+.metadata ul {
+    margin: 0 0 0 1rem;
+    padding: 0;
+}
+
+.metadata .categories, .metadata .tags {
+    margin-left: 2rem;
+}

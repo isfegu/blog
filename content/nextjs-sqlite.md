@@ -4,7 +4,7 @@ summary = "Cómo utilizar SQLite desde Next.js para obtener datos que sirvan par
 slug = "nextjs-sqlite-ssg-getstaticprops"
 date = "2021-12-29"
 categories = ['nextjs', 'sqlite']
-tags = ['rust', 'sqlite', 'ssg', 'getstaticprops']
+tags = ['sqlite', 'ssg', 'getstaticprops']
 +++
 
 Tengo un proyecto web en mente que quiero que sea gestionado por un Static Site Generator. Inicialmente pensé e incluso empecé a hacerlo con [Hugo](https://gohugo.io) (el SSG que utilizo en este blog), pero vi que se me quedaba corto y buscando alternativas encontré [Next.js](https://nextjs.org). En el momento de escribir estas líneas parece ser que está muy de moda y pese estar en Javascript (lenguaje y ecosistema en el que nunca me he sentido cómodo), es el que me ofrece justo lo que necesito; la creación dinámica en tiempo de compilación de páginas y rutas (URLs) complejas que obtienen sus datos de archivos markdown y json que están en una estructura de directorios peculiar.
@@ -24,7 +24,7 @@ Pero esto mismo ejecutado en Next.js __no funciona__. Si ya sabes porqué no sig
 
 No funciona porque intentas acceder a una base de datos que es un archivo que está en el sistema de ficheros y Next.js se ejecuta en un navegador y un navegador no tiene acceso al sistema de ficheros. Y pensé, pero si lo que yo quiero es usar Next.js para que me genere las páginas estáticas en tiempo de compilación, no quiero un navegador. Pues no, Next.js usa por debajo React y se ejecuta en un navegador.
 
-Para entender claramente esta circunstancia nada mejor que la explicación oficial. Su [explicación de pre-rendering, Static Generation y Server-side Rendering](https://nextjs.org/learn/basics/data-fetching/pre-rendering) es indispensable. 
+Para entender claramente esta circunstancia nada mejor que la explicación oficial. Es indispensable su [explicación de pre-rendering, Static Generation y Server-side Rendering](https://nextjs.org/learn/basics/data-fetching/pre-rendering).
 
 Y de esa explicación extraigo dos párrafos que me dan la pista de cómo hacer que funcione la conexión con SQLite:
 
@@ -87,12 +87,12 @@ export async function getStaticProps() {
 }
 ```
 
-En ``lib/db.js`` se expone el método ``getDistros()`` que hace la conexión contra la base de datos y obtiene los datos de una tabla. Y en ``pages/distros.js`` se crea una página que muestra los datos obtenidos de la tabla gracias a la implementación de ``getStaticProps()``.
+En ``lib/db.js`` se expone el método ``getDistros()`` que hace la conexión contra la base de datos y obtiene los datos de una tabla. En ``pages/distros.js`` se crea una página que muestra los datos obtenidos de la tabla gracias a la implementación de ``getStaticProps()``.
 
-Para no alargar esta anotación y para dejarlo más fácil y [publicado todo el código fuente del uso de SQLite desde Next.js](https://github.com/isfegu/nextjs-sqlite).
+Para no alargar este apunte he [publicado todo el código fuente del uso de SQLite desde Next.js](https://github.com/isfegu/nextjs-sqlite).
 
 ## Referencias
 
-* Recomiendo a aquel que quiera introducirse en Next.js el [tutorial que hay es su propia página web](https://nextjs.org/learn/basics/create-nextjs-app)
-* Un vídeo que explica cómo [conectar Next.js con MySQL](https://www.youtube.com/watch?v=uqlQB0oHSEE)
-* [Este artículo](https://maikelveen.com/blog/how-to-solve-module-not-found-cant-resolve-fs-in-nextjs) sobre el error _The Module not found: Can't resolve 'fs'_ y una explicación que me ha sido muy útil al respecto del funcionamiento de Next.js.
+* Recomiendo a aquel que quiera introducirse en Next.js el [tutorial que hay es su propia página web](https://nextjs.org/learn/basics/create-nextjs-app).
+* Un vídeo que explica cómo [conectar Next.js con MySQL](https://www.youtube.com/watch?v=uqlQB0oHSEE).
+* [Este artículo](https://maikelveen.com/blog/how-to-solve-module-not-found-cant-resolve-fs-in-nextjs) tiene explicación que me ha sido muy útil para entender el funcionamiento de Next.js.
