@@ -1,0 +1,17 @@
+{{ define "main" }}
+<div class="section">
+    <h1 class="title is-1 is-dark has-text-weight-medium is-family-serif has-text-centered mb-0">Listado de {{ .Data.Plural }}</h1>
+    {{ $data := .Data }}
+    <div class="box mt-6">
+        <ul class="no-bullets">
+        {{ range $key, $value := .Data.Terms.ByCount }}
+            {{ if ($value.Name) }}
+            <li>
+                <a class="tag is-dark is-large link-naked" href="{{ "tags/" | relURL }}{{ $value.Name | urlize }}">{{ $value.Name }}<span>({{ $value.Count }})</span></a>
+            </li>
+            {{ end }}
+        {{ end }}
+        </ul>
+    </div>
+</div>
+{{ end }}

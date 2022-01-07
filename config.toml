@@ -1,8 +1,6 @@
 baseURL = "https://isfegu.netlify.app/"
-title = "Aprendiz de todo, oficial de nada"
+title = "Anedonia"
 languageCode = "es-es"
-theme = "hyde"
+theme = "anedonia"
 enableGitInfo = "true"
-
-[params]
-  description = "Apuntes que me fuerzo a escribir para tratar de entender mejor."
+enableRobotsTXT = true

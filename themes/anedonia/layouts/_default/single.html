@@ -1,0 +1,34 @@
+{{ define "main" -}}
+<article class="section">
+  <h1 class="title is-dark is-2 has-text-weight-medium is-family-serif mb-0">{{ .Title }}</h1>
+  <p class="is-size-7 my-2">Publicado el <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z0700" }}">{{ .Date.Format "2006-01-02"}}</time> y actualizado el <time datetime="{{ .Lastmod.Format " 2006-01-02T15:04:05Z0700" }}">{{ .Lastmod.Format "2006-01-02" }}</time></p>
+  <div class="content is-dark is-4 mt-4 is-size-5">{{ .Content }}</div>
+</article>
+
+<aside class="section content box mb-6">
+  <div class="columns">
+    <div class="column is-one-quarter">
+      {{ with .Params.categories }}
+        <p class="is-size-5 has-text-weight-semibold is-dark">Categorías:</p>
+        <ul class="no-bullets">
+          {{ range . }}
+          <li><a class="tag is-dark is-large link-naked" href="{{ "categories/" | absURL }}{{ . | urlize }}">{{ . }}</a></li>
+          {{ end }}
+        </ul>
+      {{ end}}
+    </div>
+    <div class="column">
+      {{ with .Params.tags }}
+        <p class="is-size-5 has-text-weight-semibold is-dark">Etiquetas:</p>
+        <ul class="no-bullets">
+          {{ range . }}
+          <li><a class="tag is-dark is-large link-naked" href="{{ "tags/" | absURL }}{{ . | urlize }}">{{ . }}</a></li>
+          {{ end }}
+        </ul>
+      {{ end}}
+    </div>
+  </div>
+
+</aside>
+</div>
+{{- end }}
