@@ -1,8 +1,6 @@
 # Blog
 
-Este repositorio contiene el código fuente y el contenido de mi blog personal.
-
-Este blog está gestionado mediante [Hugo](https://gohugo.io) y contiene, por un lado, una serie de anotaciones útiles en mi largo, lento y tortuoso camino de aprendizaje de Rust y por otro lado enlaces que encuentro interesantes o útiles.
+Este repositorio contiene el código fuente y el contenido de mi blog personal construido mediante [Hugo](https://gohugo.io) y [Bulma](https://gohugo.io).
 
 ## Entornos
 
@@ -10,8 +8,10 @@ Este blog está gestionado mediante [Hugo](https://gohugo.io) y contiene, por un
 
 Para montar este blog en un entorno de desarrollo es necesario:
 
-* Instalar [Hugo](https://gohugo.io/getting-started/installing/).
+* Instalar [Hugo](https://gohugo.io/getting-started/installing/) en su **versión _extended_**.
 * Clonar este mismo repositorio.
+
+Si no quieres instalar Hugo, puedes usar Visual Studio Code. En el repositorio verás la carpeta ``.devcontainer`` que contiene la configuración necesaria para ejecutar Hugo desde un contenedor.
 
 ### Producción
 
@@ -27,7 +27,7 @@ Una vez se tiene el [entorno de desarrollo](#Development) se puede contribuir de
 
 ### Aspecto visual
 
-Para hacer cambios en el aspecto visual el directorio que te interesa es `themes/hyde` y la documentación de Hugo al respecto de los _[Templates](https://gohugo.io/templates/)_.
+Para hacer cambios en el aspecto visual el directorio que te interesa es `themes/anedonia` y la documentación de Hugo al respecto de los _[Templates](https://gohugo.io/templates/)_.
 
 ### Contenidos
 

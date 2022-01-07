@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="94.346146mm"
+   height="99.140434mm"
+   viewBox="0 0 94.346146 99.140434"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
+   sodipodi:docname="anedonia.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="197.36293"
+     inkscape:cy="188.67596"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="2560"
+     inkscape:window-height="1376"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-49.712135,-157.5346)">
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot815"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"><flowRegion
+         id="flowRegion817"><rect
+           id="rect819"
+           width="382.85715"
+           height="402.85715"
+           x="217.14285"
+           y="388.23398" /></flowRegion><flowPara
+         id="flowPara821"></flowPara></flowRoot>    <circle
+       style="opacity:1;fill:#1f1f1f;fill-opacity:1;stroke:none;stroke-width:2.64583325;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path849"
+       cx="96.885208"
+       cy="207.8656"
+       r="47.173073" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:21.46459579px;line-height:1.25;font-family:Parisienne;-inkscape-font-specification:Parisienne;letter-spacing:0px;word-spacing:0px;fill:#f9f4ed;fill-opacity:1;stroke:none;stroke-width:0.53661489;"
+       x="5.6880512"
+       y="238.46954"
+       id="text829-3-9"
+       transform="matrix(0.82127364,-0.32425924,0.38541082,1.0654512,0,0)"><tspan
+         sodipodi:role="line"
+         id="tspan827-0-2"
+         x="5.6880512"
+         y="238.46954"
+         style="font-size:103.03006744px;fill:#f9f4ed;fill-opacity:1;stroke-width:0.53661489;">h</tspan></text>
+  </g>
+</svg>

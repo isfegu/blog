@@ -1,0 +1,12 @@
+{{ partial "head.html" . }}
+
+<body>
+  {{ partial "navbar.html" . }}
+  <main class="container is-max-desktop pt-8rem">
+    {{ block "main" . -}}{{- end }}
+  </main>
+  {{ partial "footer.html" . }}
+</body>
+
+  <script>hljs.highlightAll();</script>
+</html>
