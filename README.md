@@ -46,3 +46,12 @@ Para ver el blog en el entorno de desarrollo hay que ejecutar:
 Abrir en un navegador la URL: [http://localhost:1313/](http://localhost:1313/).
 
 Todo cambio que se haga tanto en los contenidos como en el aspecto visual se verá reflejado en el navegador.
+
+Si se quiere acceder desde otra máquina, hay que ejecutar:
+
+```bash
+hugo server -D --bind=0.0.0.0 --baseURL=<IP> 
+# Donde IP puede ser, por ejemplo, http://192.168.1.20
+```
+
+Desde otra máquina, con acceso a la red 192.168.1.x, abrir en un navegador la URL: [http://192.168.1.20:1313](http://192.168.1.20:1313).

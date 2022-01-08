@@ -37,7 +37,7 @@ main {
     background-image: url(images/anedonia.svg);
     background-repeat: no-repeat;
     background-position: middle left;
-    background-size: 50px;
+    background-size: 60px;
 }
 
 .is-family-serif {
@@ -158,10 +158,8 @@ pre {
 }
 
 pre {
-    background-color: transparent !important;
     border-radius: 1rem;
-    margin: 0 !important;
-    padding: 0 !important;    
+    padding: 0 !important;
 }
 
 code {
@@ -175,9 +173,11 @@ code {
 pre code {
     font-style: normal;
     font-size: 1.3rem;
+    border-radius: 1rem;
+    overflow: auto !important;
 }
 
-.highlight {    
+.highlight {
     margin-bottom: 1.4rem;
 }
 
