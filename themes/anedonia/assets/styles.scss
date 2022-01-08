@@ -6,7 +6,7 @@
 $family-sans-serif: "Mulish","HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif;
 $family-primary: $family-sans-serif;
 $family-secondary: "Lora",serif;
-$family-handwriting: "Parisienne",cursive;
+$family-handwriting: "Parisienne",serif;
 $family-monospace: "Ubuntu Mono",monospace;
 $dark: #1f1f1f;
 $primary: $dark;
@@ -23,7 +23,7 @@ body {
 }
 
 main {
-    background-image: url(images/ornament_south.svg);
+    background-image: url(images/ornament_north.svg);
     background-repeat: no-repeat;
     background-position: top center;
     background-size: 300px;
@@ -37,7 +37,7 @@ main {
     background-image: url(images/anedonia.svg);
     background-repeat: no-repeat;
     background-position: middle left;
-    background-size: 50px;
+    background-size: 60px;
 }
 
 .is-family-serif {
@@ -138,7 +138,7 @@ article h2 {
 
 footer {
     background-color: $color-old-book !important;
-    background-image: url(images/ornament_north.svg);
+    background-image: url(images/ornament_south.svg);
     background-repeat: no-repeat;
     background-position: top center;
     background-size: 300px;
@@ -158,10 +158,8 @@ pre {
 }
 
 pre {
-    background-color: transparent !important;
     border-radius: 1rem;
-    margin: 0 !important;
-    padding: 0 !important;    
+    padding: 0 !important;
 }
 
 code {
@@ -175,9 +173,11 @@ code {
 pre code {
     font-style: normal;
     font-size: 1.3rem;
+    border-radius: 1rem;
+    overflow: auto !important;
 }
 
-.highlight {    
+.highlight {
     margin-bottom: 1.4rem;
 }
 

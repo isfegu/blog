@@ -11,7 +11,7 @@ Tengo un proyecto web en mente que quiero que sea gestionado por un Static Site 
 
 En este apunte no voy a explicar los pros y contras de Next.js, sino explicar algo que me ha hecho invertir mucho tiempo y quiero dejarlo por escrito para mi mismo y para aquel que le pueda interesar: Usar SQLite como fuente de datos para llenar de contenido las páginas que se generarán desde Next.js.
 
-Leer una base de datos SQLite desde Javascript ejecutado desde Node.js es fácil. Simplemente usando, por ejemplo, [better-sqlite3](https://github.com/JoshuaWise/better-sqlite3) (un nombre horroso). Según su documentación:
+Leer una base de datos SQLite desde Javascript ejecutado desde Node.js es fácil. Simplemente usando, por ejemplo, [better-sqlite3](https://github.com/JoshuaWise/better-sqlite3). Según su documentación:
 
 ```javascript
 const db = require('better-sqlite3')('foobar.db', options);
@@ -43,8 +43,9 @@ De nuevo, seguir la [explicación oficial sobre getStaticProps y Static Generati
 Con dos archivos tenemos suficiente, ``lib/db.js``:
 
 ```javascript
+const sqlite = require('better-sqlite3')
+
 export default function getDistros() {
-    const sqlite = require('better-sqlite3')
     const db = sqlite('database/db.sqlite')
     const statement = db.prepare("SELECT * FROM distro")
     const distros = statement.all()
