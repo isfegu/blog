@@ -1,6 +1,6 @@
 # Blog
 
-Este repositorio contiene el código fuente y el contenido de mi blog personal construido mediante [Hugo](https://gohugo.io) y [Bulma](https://gohugo.io).
+Este repositorio contiene el código fuente y el contenido de mi blog personal construido mediante [Hugo](https://gohugo.io) y [Bulma](https://bulma.io).
 
 ## Entornos
 
@@ -15,13 +15,13 @@ Si no quieres instalar Hugo, puedes usar Visual Studio Code. En el repositorio v
 
 ### Producción
 
-Este blog se publica en Netlify de forma automática cada vez que se hace un _push_ a _main_ a modo de [Continuous Deployment](https://www.atlassian.com/continuous-delivery/continuous-deployment). La URL de este blog es [https://isfegu.netlify.app/](https://isfegu.netlify.app/).
+Este blog se publica en [Netlify](https://netlify.com/) de forma automática cada vez que se hace un _push_ a _main_ a modo de [Continuous Deployment](https://www.atlassian.com/continuous-delivery/continuous-deployment). La URL de este blog es [https://anedonia.website/](https://anedonia.website/).
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/f1c7c22a-a9d6-4fb8-8972-c85810559521/deploy-status)](https://app.netlify.com/sites/isfegu/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f1c7c22a-a9d6-4fb8-8972-c85810559521/deploy-status)](https://app.netlify.com/sites/anedonia/deploys)
 
 ## Contribuir
 
-Cualquier aportación, a modo de _pull request_ será bienvenida.
+Cualquier aportación, a modo de _pull request_ será bienvenida. Este repositorio utiliza [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
 Una vez se tiene el [entorno de desarrollo](#Development) se puede contribuir de dos formas, mejorando el aspecto visual o mejorando/aportando contenidos.
 
