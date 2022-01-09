@@ -1,6 +1,9 @@
-baseURL = "https://isfegu.netlify.app/"
+baseURL = "https://anedonia.website/"
 title = "Anedonia"
 languageCode = "es-es"
 theme = "anedonia"
 enableGitInfo = "true"
-enableRobotsTXT = true
+enableRobotsTXT = "true"
+
+[params]
+  description = "Aprendiz de todo, oficial de nada. Un espacio en el que anotar esas cosas que quiero recordar." 
