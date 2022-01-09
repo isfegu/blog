@@ -1,6 +1,7 @@
 +++
 title = "Ownership: o cómo se gestiona la memoria en Rust (parte I)"
 summary = "Este apunte surge de mi necesidad de querer entender bien las bases de cómo Rust gestiona la memoria. Siento que si esta parte no la comprendo lo acabaré pagando. En esta primera entrega me enfrento a la Propiedad."
+description = "Una anotación respecto la gestión de la memoria enfocada en entender la propiedad."
 slug = "ownership-gestion-de-memoria-rust"
 date = "2021-12-26"
 categories = ['rust']
@@ -11,6 +12,7 @@ tags = ['rust', 'memoria', 'ownership', 'propiedad']
 >
 > * Parte 1: Ownership
 > * [Parte 2: Borrowing](../borrowing-gestion-de-memoria-rust)
+>
 > Puesto que no soy ningún experto en la materia aviso que este escrito puede contener errores. Como sigo estudiando y aprendiendo lo iré corrigiendo y ampliando. También aviso que he simplificado algunas secciones para facilitar alguna explicación y mi propio entendimiento.
 
 Esta es una lista de palabras inglesas muy utilizadas en el ámbito de la gestión de la memoria en Rust con la traducción que he utilizado para este documento.

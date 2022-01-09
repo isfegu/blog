@@ -1,4 +1,6 @@
 {{ define "main" -}}
-<h1>404: Page not found</h1>
-<p class="lead">Sorry, we've misplaced that URL or it's pointing to something that doesn't exist. <a href="{{ .Site.BaseURL }}">Head back home</a> to try finding it again.</p>
+<div class="section">
+    <h1 class="title is-1 is-dark has-text-weight-medium is-family-serif has-text-centered mb-0">Página no encontrada</h1>
+    <p class="subtitle mt-6">Lo lamento, pero la página que buscas no existe. Puedes ir a la <a href="{{ .Site.BaseURL }}">página de inicio</a>, al <a href="{{ .Site.BaseURL }}categories">listado de categorías</a> o al <a href="{{ .Site.BaseURL }}tags">listado de etiquetas</a> a ver si encuentras lo que buscas.</p>
+</div>
 {{- end }}

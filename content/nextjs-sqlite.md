@@ -1,6 +1,7 @@
 +++
 title = "Static Site Generation con Next.js y SQLite"
 summary = "Cómo utilizar SQLite desde Next.js para obtener datos que sirvan para generar contenido a la hora de construir páginas generadas estáticamente."
+description = "Cómo utilizar SQLite desde Next.js para obtener datos que sirvan para generar contenido a la hora de construir páginas generadas estáticamente."
 slug = "nextjs-sqlite-ssg-getstaticprops"
 date = "2021-12-29"
 categories = ['nextjs', 'sqlite']
