@@ -4,5 +4,11 @@
         <p>Este sitio web <b class="is-size-5">no</b> usa cookies ni realiza ningún tipo de seguimiento.</p>
         <p>El código fuente y el contenido están disponibles en <a href="https://github.com/isfegu/blog">Github</a> bajo lincencia <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.es" rel="license">Creative Commons BY-NC</a>.</p>
         <p>Comentarios y mejoras son bienvenidos en forma de <a href="https://github.com/isfegu/blog"><em>pull request</em></a>.</p>
+        <p class="connect">
+            {{ range .AlternativeOutputFormats -}}           
+            <a href="{{ .Permalink }}"><img src="images/rss.svg" alt="RSS"></a>
+            {{ end -}}
+            <a href="https://twitter.com/isfegu"><img src="images/twitter.svg" alt="Twitter"></a>
+        </p>
     </div>
 </footer>
