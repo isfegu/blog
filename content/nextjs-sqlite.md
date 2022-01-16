@@ -68,9 +68,9 @@ export default function Distros(props) {
             <ul>
                 {
                     distros.map(
-                        (item) => <>
-                            <li key={item.id}>{item.name} {item.version}</li>
-                        </>
+                        (item) => <li key={item.id}>
+                            {item.name} {item.version}
+                        </li>
                     )
                 }
             </ul>
