@@ -3,10 +3,9 @@ title = "Usar Bulma con Next.js"
 summary = "Cómo montar una aplicación básica Next.js que utilice el framework CSS Bulma para facilitar la maquetación."
 description = "Cómo montar una aplicación básica Next.js que utilice el framework CSS Bulma para facilitar la maquetación."
 slug = "nextjs-bulma"
-date = "2022-01-28"
+date = "2022-01-26"
 categories = ['nextjs', 'bulma']
 tags = ['css', 'sass', 'ssg']
-draft = false
 +++
 
 Para un proyecto muy sencillo al que ando dando vueltas me he planteado usar [Next.js](https://nextjs.org) y [Bulma](https://bulma.io/), como excusa para aprender un poquito de ambos. Aquí dejo anotado los pasos que he hecho para tener el entorno de desarrollo montado.
