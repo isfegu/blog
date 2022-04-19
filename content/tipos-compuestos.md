@@ -1,22 +1,26 @@
 +++
-title = "Tipos compuestos en Rust"
+title = "Tipos compuestos y colecciones en Rust"
 summary = ""
 description = ""
-slug = "rust-tipos-compuestos"
+slug = "rust-tipos-compuestos-colecciones"
 date = "2022-04-09"
 categories = ['rust']
-tags = ['rust', 'tipos compuestos']
+tags = ['rust', 'tipos compuestos', 'colecciones']
 draft = true
 +++
 
 
-- Tupla
-- Matriz
-- Vector
-- Enumeración
-- Mapa Hash
+- ~~Tupla~~
+- ~~Matriz~~
 
-## Tupla
+- Vector
+- ~~Mapa Hash~~
+
+Tanto los tipos compuestos como las colecciones son tipos de datos que agrupan múltiples valores (de un mismo o diferente tipo). La diferencia principal entre ambos es que los tipos compuestos se almacenan en la pila y tienen un tamaño conocido en tiempo de compilación mientras que las colecciones se almacenan en el montón y su tamaño puede variar en tiempo de ejecución.
+
+## Tipos compuestos
+
+### Tupla
 
 Una tupla almacena valores que pueden ser de diferente tipo. A cada valor se le llama __elemento__.
 
@@ -73,7 +77,7 @@ error[E0308]: mismatched types
   |     expected due to the type of this binding
 ```
 
-## Matriz
+### Matriz
 
 Una matriz almacena valores de un mismo tipo. A cada valor se le llama __elemento__.
 
@@ -186,3 +190,5 @@ println!("{}", films.get("Los bingueros"));
 // Nos devolverá:
 // Some("Mariano Ozores")
 ```
+
+## Colecciones
