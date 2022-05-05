@@ -1,7 +1,7 @@
 +++
 title = "Tipos compuestos y colecciones en Rust"
-summary = ""
-description = ""
+summary = "Tanto los tipos compuestos como las colecciones son tipos de datos que agrupan múltiples valores (de un mismo o diferente tipo). La diferencia principal entre ambos es que los tipos compuestos se almacenan en la pila y tienen un tamaño conocido en tiempo de compilación mientras que las colecciones se almacenan en el montón y su tamaño puede variar en tiempo de ejecución."
+description = "En rust, los tipos compuestos y las colecciones son tipos de datos que agrupan múltiples valores."
 slug = "rust-tipos-compuestos-colecciones"
 date = "2022-04-09"
 categories = ['rust']
@@ -9,14 +9,7 @@ tags = ['rust', 'tipos compuestos', 'colecciones']
 draft = true
 +++
 
-
-- ~~Tupla~~
-- ~~Matriz~~
-
-- Vector
-- ~~Mapa Hash~~
-
-Tanto los tipos compuestos como las colecciones son tipos de datos que agrupan múltiples valores (de un mismo o diferente tipo). La diferencia principal entre ambos es que los tipos compuestos se almacenan en la pila y tienen un tamaño conocido en tiempo de compilación mientras que las colecciones se almacenan en el montón y su tamaño puede variar en tiempo de ejecución.
+Tanto los __tipos compuestos__ como las __colecciones__ son tipos de datos que agrupan múltiples valores (de un mismo o diferente tipo). La diferencia principal entre ambos es que los tipos compuestos se almacenan en la pila y tienen un tamaño conocido en tiempo de compilación mientras que las colecciones se almacenan en el montón y su tamaño puede variar en tiempo de ejecución.
 
 ## Tipos compuestos
 
@@ -32,7 +25,7 @@ let tupla = ('A', "Alfa", 10i32, true);
 
 Una tupla tiene un tamaño fijo y no puede aumentar o disminuir a lo largo de la ejecución del programa.
 
-Para acceder a los valores de una tupla se usa un índice que indica su posición dentro de la tupla. El primer elemento de la tupla tiene el índice 0, y así sucesivamente.
+Para acceder a los valores de una tupla se usa un índice que indica su posición dentro de la tupla. El primer elemento de la tupla tiene el índice 0, el segundo el 1 y así sucesivamente.
 
 ```rust
 println!("{:?}", tupla.0); // 'A'
@@ -46,7 +39,7 @@ Tratar de acceder a un valor mediante un índice igual o mayor que el tamaño de
 ```rust
 println!("{:?}", tupla.4);
 
-// Al compilar nos este código obtenemos el siguiente error:
+// Al compilar este código obtenemos el siguiente error:
 
 error[E0609]: no field `4` on type `(char, &str, i32, bool)`
  --> src/main.rs:8:28
@@ -92,7 +85,7 @@ let matriz_2 = [7; 10]; // Inicializa una matriz de 10 elementos en el que cada 
 ```
 Una matriz tiene un tamaño fijo y no puede aumentar o disminuir a lo largo de la ejecución del programa.
 
-Para acceder a los valores de una matriz se usa un índice que indica su posición dentro de la tupla. El primer elemento de la matriz tiene el índice 0, y así sucesivamente.
+Para acceder a los valores de una matriz se usa un índice que indica su posición dentro de la tupla. El primer elemento de la matriz tiene el índice 0, el segundo el 1 y así sucesivamente.
 
 ```rust
 println!("{:?}", matriz_1[0]); // "Alfa"
@@ -107,7 +100,7 @@ Tratar de acceder a un valor mediante un índice igual o mayor que el tamaño de
 ```rust
 println!("{:?}", matriz_1[8]);
 
-// Al compilar nos este código obtenemos el siguiente error:
+// Al compilar este código obtenemos el siguiente error:
 
 error: this operation will panic at runtime
   --> src/main.rs:10:18
@@ -117,7 +110,7 @@ error: this operation will panic at runtime
    |
 ```
 
-Es posible modificar el valor de un elemento.
+Es posible modificar el valor de un elemento (siempre que la matriz sea declarada como mutable, `mut`).
 
 ```rust
 matriz_1[2] = "Phi";
@@ -138,7 +131,112 @@ error[E0308]: mismatched types
    | expected due to the type of this binding
 ```
 
-## Mapa Hash
+## Colecciones
+
+### Vector
+
+Un vector, `Vec<T>`, almacena valores de un mismo tipo.
+
+Hay dos formas de declarar un vector:
+
+- Mediante el método `new()` de la estructura `Vec`.
+
+  ```rust
+  let v = Vec::new();  
+  ```
+
+- Mediante la macro `vec!`.
+
+  ```rust
+  let v = vec![val1, val2, val3];
+  ```
+
+A diferencia de una matriz, un vector no tiene un tamaño fijo, por lo tanto pueden agregarse o eliminarse elementos a lo largo de la ejecución del programa.
+
+Se usa el método `push` para añadir elementos.
+
+```rust
+let mut primos = Vec::new();
+primos.push(2);
+primos.push(3);
+primos.push(5);
+
+// El contenido de primos es:
+// [2, 3, 5]
+```
+
+Solo se pueden añadir elementos del tipo adecuado. El tipo lo marca el primer elemento que se añade.
+
+```rust
+primos.push(3.4);
+
+// Al compilar este código obtenemos el siguiente error:
+
+  |
+  |     primos.push(3.4);
+  |                 ^^^ expected integer, found floating-point number
+
+// El mismo error nos encontraremos a declarar un vector con la macro vec!
+
+let mut primos = vec![2,3,5.5,7];
+
+  |
+  |     let mut primos = vec![2,3,5.5,7];
+  |                               ^^^ expected integer, found floating-point number
+```
+
+Para acceder a los elementos de un vector se usa el índice que lo posiciona dentro del vector. El primer elemento tiene el índice 0, el segundo el 1 y así sucesivamente.
+
+```rust
+println!("{:?}", primos[0]); // 2
+println!("{:?}", primos[1]); // 3
+println!("{:?}", primos[2]); // 5
+println!("{:?}", primos[4]); // 7
+```
+
+Tratar de acceder a un elemento mediante un índice igual o mayor que el tamaño del vector resultará en un error en tiempo de ejecución.
+
+```rust
+println!("{:?}", primos[9]);
+
+// Al ejecutar este código obtendremos el siguiente error:
+
+thread 'main' panicked at 'index out of bounds: the len is 3 but the index is 9'
+```
+
+Para eliminar elementos se usa el método `remove` especificando el índice del elemento a eliminar.
+
+```rust 
+let mut primos = vec![2,3,5];
+
+primos.remove(1);
+
+// El contenido de primos es:
+// [2, 5]
+```
+
+Tratar de eliminar un elemento mediante un índice igual o mayor que el tamaño del vector resultará en un error en tiempo de ejecución.
+
+```rust 
+let mut primos = vec![2,3,5];
+
+primos.remove(4);
+
+// Al ejecutar este código obtendremos el siguiente error:
+
+thread 'main' panicked at 'removal index (is 4) should be < len (is 3)',
+```
+
+Es posible modificar el valor de un elemento (siempre que el vector sea declarado como mutable, `mut`).
+
+```rust
+primos[2] = 9;
+
+// El contenido de primos es:
+// [2, 3, 9]
+```
+
+### Mapa Hash
 
 El tipo `HashMap<K, V>` almacena datos asignando cada clave _K_ con su valor _V_.
 
@@ -152,7 +250,7 @@ let mut films: HashMap<String, String> = HashMap::new();
 
 Un mapa hash no tiene un tamaño fijo, éste puede aumentar o dismuir a lo largo de la ejecución del programa.
 
-Se usa el método _insert_ para añadir elementos y el método _remove_ para eliminarlos.
+Se usa el método `insert` para añadir elementos y el método `remove` para eliminarlos.
 
 ```rust
 films.insert(String::from("El bueno, el feo y el malo"), String::from("Sergio Leone"));
@@ -190,5 +288,3 @@ println!("{}", films.get("Los bingueros"));
 // Nos devolverá:
 // Some("Mariano Ozores")
 ```
-
-## Colecciones
