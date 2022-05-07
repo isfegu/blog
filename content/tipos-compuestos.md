@@ -3,10 +3,10 @@ title = "Tipos compuestos y colecciones en Rust"
 summary = "Tanto los tipos compuestos como las colecciones son tipos de datos que agrupan múltiples valores (de un mismo o diferente tipo). La diferencia principal entre ambos es que los tipos compuestos se almacenan en la pila y tienen un tamaño conocido en tiempo de compilación mientras que las colecciones se almacenan en el montón y su tamaño puede variar en tiempo de ejecución."
 description = "En rust, los tipos compuestos y las colecciones son tipos de datos que agrupan múltiples valores."
 slug = "rust-tipos-compuestos-colecciones"
-date = "2022-04-09"
+date = "2022-05-07"
 categories = ['rust']
 tags = ['rust', 'tipos compuestos', 'colecciones']
-draft = true
+draft = false
 +++
 
 Tanto los __tipos compuestos__ como las __colecciones__ son tipos de datos que agrupan múltiples valores (de un mismo o diferente tipo). La diferencia principal entre ambos es que los tipos compuestos se almacenan en la pila y tienen un tamaño conocido en tiempo de compilación mientras que las colecciones se almacenan en el montón y su tamaño puede variar en tiempo de ejecución.
@@ -55,6 +55,7 @@ Es posible modificar el valor de un elemento.
 tupla.2 = 6i32;
 println!("{:?}", tupla.2); // Mostrará 6
 ```
+
 Pero ha de ser por un valor del mismo tipo. La inicialización de una tupla marca el tipo de cada elemento a lo largo de todo el código. Y éste es evaluado en tiempo de compilación.
 
 ```rust
@@ -83,6 +84,7 @@ Hay dos formas de inicializar una matriz:
 let matriz_1 = ["Alfa", "Beta", "Gamma", "Delta", "Epsilon"];
 let matriz_2 = [7; 10]; // Inicializa una matriz de 10 elementos en el que cada uno de ellos tiene el valor 7
 ```
+
 Una matriz tiene un tamaño fijo y no puede aumentar o disminuir a lo largo de la ejecución del programa.
 
 Para acceder a los valores de una matriz se usa un índice que indica su posición dentro de la tupla. El primer elemento de la matriz tiene el índice 0, el segundo el 1 y así sucesivamente.
@@ -116,6 +118,7 @@ Es posible modificar el valor de un elemento (siempre que la matriz sea declarad
 matriz_1[2] = "Phi";
 println!("{:?}", matriz_1[2]); // Mostrará "Phi"
 ```
+
 Pero ha de ser por un valor del mismo tipo. La inicialización de una matriz marca el tipo de cada elemento a lo largo de todo el código. Y éste es evaluado en tiempo de compilación.
 
 ```rust
@@ -206,7 +209,7 @@ thread 'main' panicked at 'index out of bounds: the len is 3 but the index is 9'
 
 Para eliminar elementos se usa el método `remove` especificando el índice del elemento a eliminar.
 
-```rust 
+```rust
 let mut primos = vec![2,3,5];
 
 primos.remove(1);
@@ -217,7 +220,7 @@ primos.remove(1);
 
 Tratar de eliminar un elemento mediante un índice igual o mayor que el tamaño del vector resultará en un error en tiempo de ejecución.
 
-```rust 
+```rust
 let mut primos = vec![2,3,5];
 
 primos.remove(4);
@@ -250,7 +253,7 @@ let mut films: HashMap<String, String> = HashMap::new();
 
 Un mapa hash no tiene un tamaño fijo, éste puede aumentar o dismuir a lo largo de la ejecución del programa.
 
-Se usa el método `insert` para añadir elementos y el método `remove` para eliminarlos.
+Se usa el método `insert` para añadir elementos.
 
 ```rust
 films.insert(String::from("El bueno, el feo y el malo"), String::from("Sergio Leone"));
@@ -258,12 +261,7 @@ films.insert(String::from("La noche del cazador"), String::from("Charles Laughto
 films.insert(String::from("Los bingueros"), String::from("Mariano Ozores"));
 
 // El contenido de films es:
-// {"El bueno, el feo y el malo": "Sergio Leone", "Matar a un ruiseñor": "Robert Mulligan", "Los bingueros": "Mariano Ozores"}
-
-films.remove("Los bingueros");
-
-// El contenido de films es:
-// {"El bueno, el feo y el malo": "Sergio Leone", "Matar a un ruiseñor": "Robert Mulligan"}
+// {"El bueno, el feo y el malo": "Sergio Leone", "Matar a un ruiseñor": "Robert Mulligan", "Los bingueros": "Mariano Ozores"} 
 ```
 
 Solo se pueden añadir claves y valores del tipo estipulado en la declaración del mapa hash.
@@ -274,11 +272,22 @@ films.insert(String::from("Siete"), 7);
 // Al compilar este código obtenemos el siguiente error:
 
    |
-   | films.insert(String::from("Siete"), 1);
+   | films.insert(String::from("Siete"), 7);
    |                                     ^- help: try using a conversion method: `.to_string()`
    |                                     |
    |                                     expected struct `String`, found integer
 ```
+
+Podemos eliminar elementos usando el método `remove`.
+
+```rust
+films.remove("Los bingueros");
+
+// El contenido de films es:
+// {"El bueno, el feo y el malo": "Sergio Leone", "Matar a un ruiseñor": "Robert Mulligan"}
+```
+
+Tratar de eliminar un elemento que no existe nos devolverá un `None`.
 
 Se usa el método _get_ para obtener el valor asignado a una clave.
 
@@ -288,3 +297,13 @@ println!("{}", films.get("Los bingueros"));
 // Nos devolverá:
 // Some("Mariano Ozores")
 ```
+
+Trater de obtener un valor mediante una clave que no existe nos devolverá un `None`.
+
+## Enlaces de referencia
+
+- [https://doc.rust-lang.org/book/ch03-02-data-types.html#the-tuple-type](https://doc.rust-lang.org/book/ch03-02-data-types.html#the-tuple-type): Documentación oficial sobre Tuplas.
+- [https://doc.rust-lang.org/book/ch03-02-data-types.html#the-array-type](https://doc.rust-lang.org/book/ch03-02-data-types.html#the-array-type): Documentación oficial sobre Matrices.
+- [https://doc.rust-lang.org/stable/std/collections/index.html](https://doc.rust-lang.org/stable/std/collections/index.html): En este apunte solo he hablado de Vectores, Mapas Hash y muy superficialmente, en la documentación oficial puedes ver más en profundidad estas colecciones y otras que existen en la librería estandard de Rust.
+- [https://doc.rust-lang.org/stable/std/vec/struct.Vec.html]([https://doc.rust-lang.org/stable/std/vec/struct.Vec.html]): Referencia oficial de los Vectores.
+- [https://doc.rust-lang.org/stable/std/collections/hash_map/struct.HashMap.html](https://doc.rust-lang.org/stable/std/collections/hash_map/struct.HashMap.html): Referencia oficial de los Mapas Hash.
