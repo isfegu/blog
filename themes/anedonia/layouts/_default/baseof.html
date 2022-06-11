@@ -2,11 +2,12 @@
 
 <body>
   {{ partial "navbar.html" . }}
-  <main class="container is-max-desktop pt-8rem">
+  <main class="container is-max-desktop">
     {{ block "main" . -}}{{- end }}
   </main>
   {{ partial "footer.html" . }}
 </body>
 
-  <script>hljs.highlightAll();</script>
+<script>hljs.highlightAll();</script>
+
 </html>

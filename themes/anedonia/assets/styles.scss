@@ -3,11 +3,11 @@
 // Import Bulma
 @import "./bulma/bulma.sass";
 
-$family-sans-serif: "Mulish","HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif;
+$family-sans-serif: "Mulish", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $family-primary: $family-sans-serif;
-$family-secondary: "Lora",serif;
-$family-handwriting: "Parisienne",serif;
-$family-monospace: "Ubuntu Mono",monospace;
+$family-secondary: "Lora", serif;
+$family-handwriting: "Parisienne", serif;
+$family-monospace: "Ubuntu Mono", monospace;
 $dark: #1f1f1f;
 $primary: $dark;
 $color-old-book: #F9F4ED;
@@ -22,12 +22,12 @@ body {
     color: $primary;
 }
 
-main {
-    background-image: url(images/ornament_north.svg);
-    background-repeat: no-repeat;
-    background-position: top center;
-    background-size: 300px;
-}
+// main {
+//     background-image: url(images/ornament_north.svg);
+//     background-repeat: no-repeat;
+//     background-position: top center;
+//     background-size: 300px;
+// }
 
 .navbar {
     background-color: $color-old-book;
@@ -87,7 +87,7 @@ a.link-inverse {
 a.link-inverse:hover {
     color: $white;
     background-image: none;
-    background-color: $primary !important;
+    background-color: $primary  !important;
 }
 
 a.link-naked {
@@ -132,18 +132,18 @@ h2 {
 
 article h2 {
     font-size: 2rem !important;
-    font-family: $family-secondary !important;
+    font-family: $family-secondary  !important;
     font-weight: 400 !important;
 }
 
 article h3 {
     font-size: 1.6rem !important;
-    font-family: $family-secondary !important;
+    font-family: $family-secondary  !important;
     font-weight: 400 !important;
 }
 
 footer {
-    background-color: $color-old-book !important;
+    background-color: $color-old-book  !important;
     background-image: url(images/ornament_south.svg);
     background-repeat: no-repeat;
     background-position: top center;
@@ -168,7 +168,7 @@ blockquote {
 
 code,
 pre {
-  font-family: $family-monospace;
+    font-family: $family-monospace;
 }
 
 pre {
@@ -200,7 +200,7 @@ ul.no-bullets {
 }
 
 ul.no-bullets li {
-    display:inline-table;
+    display: inline-table;
     margin-bottom: .3rem;
     margin-right: .1rem;
 }
