@@ -34,7 +34,7 @@ Esta es una lista de palabras inglesas muy utilizadas en el ámbito de la gesti�
 * ***Scope***: Ámbito.
 * ***Size***: Tamaño.
 * ***Stack***: Pila.
-* ___Trait___: Rasgo.
+* ***Trait***_: Rasgo.
 * ***Unbind***: Desligar.
 
 Para poder entender cómo se gestiona la memoria en Rust antes es necesario conocer, aunque sea de una manera superficial, cómo se usa la memoria de un ordenador.
@@ -45,7 +45,7 @@ Siempre imaginé una variable como una caja donde se guarda un dato. Y que esa c
 
 Frases que estaban en mi cabeza como "a la variable num se le asigna el valor 1" o "num vale 1", sumado a la sintaxis que utilizan muchos lenguajes de programación para declarar variables y asignarles un dato, me hacían pensar que primero existía la variable y luego el dato que se guarda en ella.
 
-Pero lo que sucede es ligeramente diferente. Primero está el dato y luego está la variable. Primero el dato se guarda en una porción de la memoria y luego se crea una variable que se enlaza \(_bind_\) con esa porción de memoria. Ese enlace consiste en una dirección de memoria, que al igual que en un callejero, nos permite saber dónde de toda la memoria disponible está guardado el dato.
+Pero lo que sucede es ligeramente diferente. Primero está el dato y luego está la variable. Primero el dato se guarda en una porción de la memoria y luego se crea una variable que se enlaza \(*bind*\) con esa porción de memoria. Ese enlace consiste en una dirección de memoria, que al igual que en un callejero, nos permite saber dónde de toda la memoria disponible está guardado el dato.
 
 Cuando declaramos una variable y le asignamos un dato, estamos enlazando la variable al dato. De la misma manera que cuando pasamos una variable como parámetro a una función no pasamos el dato de una caja a otra, sino que enlazamos la variable que recibe el parámetro a ese dato. Lo mismo sucede con el retorno de funciones, enlazamos el dato de retorno a la variable que espera ese dato.
 
@@ -53,13 +53,13 @@ El cambio es sutil, pero el concepto de enlace es muy útil para entender cierto
 
 ## Pila y montón
 
-La pila \(_stack_\) y el montón \(_heap_\) son dos tipos de memoria donde podemos almacenar datos.
+La pila \(*stack*\) y el montón \(*heap*\) son dos tipos de memoria donde podemos almacenar datos.
 
-La pila tiene una estructura, justamente como su nombre indica, de pila. En la pila se guardan los datos uno encima del otro y se quitan de uno en uno empezando por el último que se puso. A este funcionamiento se le llama [LIFO](https://es.wikipedia.org/wiki/Last_in%2C_first_out), _Last In, First Out_. Podemos imaginarlo como una pila de libros, complicado quitar el libro que hay más abajo sin quitar antes los que hay encima.
+La pila tiene una estructura, justamente como su nombre indica, de pila. En la pila se guardan los datos uno encima del otro y se quitan de uno en uno empezando por el último que se puso. A este funcionamiento se le llama [LIFO](https://es.wikipedia.org/wiki/Last_in%2C_first_out), *Last In, First Out*. Podemos imaginarlo como una pila de libros, complicado quitar el libro que hay más abajo sin quitar antes los que hay encima.
 
 El montón no tiene una estructura fija tan "estricta" como la pila, es más un espacio. En la que los datos se van guardando allí donde hay espacio libre. Siguiendo con la analogía anterior, podríamos decir que es una estantería donde podemos poner algunos libros continuos y otros no. Unos en un estante y otros en otro y no es necesario que sigan ninguna ordenación.
 
-Qué va en la pila y qué va en el montón depende, generalizando, del tipo del dato que queremos almacenar y más precisamente del tamaño \(_size_\) de la porción de memoria necesaria para almacenar ese dato.
+Qué va en la pila y qué va en el montón depende, generalizando, del tipo del dato que queremos almacenar y más precisamente del tamaño \(*size*\) de la porción de memoria necesaria para almacenar ese dato.
 
 Todo dato que requiera de una cantidad de memoria que es conocida en tiempo de compilación y que no cambiará a lo largo de la ejecución del programa, se almacena en la pila. Cuando esa cantidad es desconocida en tiempo de compilación o cambiará a lo largo de la ejecución del programa, se almacena en el montón.
 
@@ -95,7 +95,7 @@ let mut texto: String = String::from("Hola, mundo");
 // para almacenar "Adiós mundo cruel".
 ```
 
-La variable `texto` se guarda en memoria de la siguiente manera: en el montón se guarda el dato \(en este caso la cadena de texto\) y en la pila se almacena un puntero \(_pointer_\) a ese espacio en el montón junto con la capacidad de ese espacio y el tamaño del dato.
+La variable `texto` se guarda en memoria de la siguiente manera: en el montón se guarda el dato \(en este caso la cadena de texto\) y en la pila se almacena un puntero \(*pointer*\) a ese espacio en el montón junto con la capacidad de ese espacio y el tamaño del dato.
 
 ```txt
               puntero
@@ -120,22 +120,22 @@ La manera en cómo se almacenan y se borran los datos en el montón determina c�
 
 ## Gestión de la memoria
 
-Todos los lenguajes de programación transfieren al programador, en mayor o menor medida, la gestión de la memoria del montón. Esa gestión se refiere, principalmente, a la responsabilidad de almacenar datos en memoria ocupando memoria libre \(_allocation\)_ y borrar esos datos cuando ya nos son necesarios, liberando la memoria ocupada \(_free_\).
+Todos los lenguajes de programación transfieren al programador, en mayor o menor medida, la gestión de la memoria del montón. Esa gestión se refiere, principalmente, a la responsabilidad de almacenar datos en memoria ocupando memoria libre \(*allocation*\) y borrar esos datos cuando ya nos son necesarios, liberando la memoria ocupada \(*free*\).
 
 Generalizando, esa gestión puede ser de dos maneras:
 
-* mediante un **recolector de basura** \(_garbage collector_\), donde el programador no tiene que pensar ni preocuparse dónde los datos son almacenados ni cómo ni cuando son borrados, ya que es el propio entorno de ejecución \(_runtime_\) del lenguaje el que se preocupa por ti. Lenguajes como Javascript o Java entre muchos funcionan de esta manera.
-* mediante la **asignación manual de memoria** \(_Manual memory allocation_\), en la que la gestión completa de la memoria recae sobre el programador. Es el programador quien tiene que especificar cómo y dónde almacenar los datos y cuando borrarlos. Lenguajes como C y C++ funcionan de esta manera.
+* mediante un **recolector de basura** \(*garbage collector*\), donde el programador no tiene que pensar ni preocuparse dónde los datos son almacenados ni cómo ni cuando son borrados, ya que es el propio entorno de ejecución \(*runtime*\) del lenguaje el que se preocupa por ti. Lenguajes como Javascript o Java entre muchos funcionan de esta manera.
+* mediante la **asignación manual de memoria** \(*Manual memory allocation*\), en la que la gestión completa de la memoria recae sobre el programador. Es el programador quien tiene que especificar cómo y dónde almacenar los datos y cuando borrarlos. Lenguajes como C y C++ funcionan de esta manera.
 
 El recolector de basura facilita la vida al desarrollador a costa de una pérdida de rendimiento y de control. Mediante la asignación manual de memoria tienes el rendimiento y control, a cambio de una mayor complejidad de código.
 
-Pero existe una tercera manera de gestionar la memoria, la manera en cómo lo hace Rust, mediante la propiedad \(_ownership_\).
+Pero existe una tercera manera de gestionar la memoria, la manera en cómo lo hace Rust, mediante la propiedad \(*ownership*\).
 
 ## Propiedad
 
 La propiedad son una serie de reglas que hacen que el programador no tenga que pensar en cómo gestionar la memoria. Sin afectar a su rendimiento ni perder su control, como puede suceder con la recolección de basura y detectando en fase de compilación los posibles errores relacionados con la memoria que puedes encontrarte en fase de ejecución con la asignación manual de la memoria (*dangling pointers* o *double free*).
 
-Y se reduce a algo muy simple, en Rust, todo dato tiene un único propietario \(_owner_\). Ser propietario de un dato implica ser el único que puede acceder y manipular el dato y determina el tiempo \(_lifetime_\) durante el que puedes hacerlo.
+Y se reduce a algo muy simple, en Rust, todo dato tiene un único propietario \(*owner*\). Ser propietario de un dato implica ser el único que puede acceder y manipular el dato y determina el tiempo \(*lifetime*\) durante el que puedes hacerlo.
 
 ### La propiedad empieza con una asignación
 
@@ -153,7 +153,7 @@ fn main () {
 
 ### La propiedad termina con el ámbito
 
-Cuando termina el ámbito \(_scope\)_ de una variable, la variable se elimina, se rompe el enlace \(_unbind_\) entre la variable y el dato del que es propietaria y se borra automáticamente el dato de la memoria \(comportando la liberación de esa porción de memoria\). En Rust se dice que el dato es soltado \(_dropped_\).
+Cuando termina el ámbito \(*scope*\) de una variable, la variable se elimina, se rompe el enlace \(*unbind*\) entre la variable y el dato del que es propietaria y se borra automáticamente el dato de la memoria \(comportando la liberación de esa porción de memoria\). En Rust se dice que el dato es soltado \(*dropped*\).
 
 ```rust
 fn main () {
@@ -291,7 +291,7 @@ Lo mismo sucede cuando pasamos una variable como parámetro de una función.
 ```rust
 fn main () {
     let i: i32 = 10;
-	// `i` es la propietaria del dato 10.
+ // `i` es la propietaria del dato 10.
 
     duplica(i);  
 }
@@ -361,7 +361,7 @@ Montón | H | o | l | a | , |   | m | u | n | d | o |   |
 Dejo a continuación un listado de todo aquello de lo que me he servido para aprender y poder escribir este apunte. Sincero agradecimiento a cada uno de sus autores.
 
 * [https://www.softax.pl/blog/rust-lang-in-a-nutshell-1-introduction/](https://www.softax.pl/blog/rust-lang-in-a-nutshell-1-introduction/)
-* https://blog.thoughtram.io/ownership-in-rust/
+* [https://blog.thoughtram.io/ownership-in-rust/](https://blog.thoughtram.io/ownership-in-rust/)
 * [https://depth-first.com/articles/2020/01/27/rust-ownership-by-example/](https://depth-first.com/articles/2020/01/27/rust-ownership-by-example/)
 * [https://medium.com/@bugaevc/understanding-rust-ownership-borrowing-lifetimes-ff9ee9f79a9c](https://medium.com/@bugaevc/understanding-rust-ownership-borrowing-lifetimes-ff9ee9f79a9c)
 * [https://medium.com/@thomascountz/ownership-in-rust-part-1-112036b1126b](https://medium.com/@thomascountz/ownership-in-rust-part-1-112036b1126b)
