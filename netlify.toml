@@ -6,3 +6,13 @@ command = "hugo --gc --minify"
 HUGO_VERSION = "0.91.2"
 HUGO_ENV = "production"
 HUGO_ENABLEGITINFO = "true"
+
+[[redirects]]
+  from = "/flexbox-markdown-bash-blog/"
+  to = "/"
+  status = 410
+
+[[redirects]]
+  from = "/paleta-colores-nord-ilustraciones-svg-gratis/"
+  to = "/"
+  status = 410
