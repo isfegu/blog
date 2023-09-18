@@ -7,7 +7,7 @@
         "context": "..",
         "args": {
             // Update 'VARIANT' to pick a Go version: 1.15, 1.16, 1.17
-            "VARIANT": "1.17",
+            "VARIANT": "1.17"
         }
     },
     // Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.

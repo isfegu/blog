@@ -1,7 +1,7 @@
 {{ define "main" -}}
 <article class="section">
   <h1 class="title is-dark is-2 has-text-weight-medium is-family-serif mb-0">{{ .Title }}</h1>
-  <p class="is-size-7 my-2">Publicado el <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z0700" }}">{{ .Date.Format "2006-01-02"}}</time> y actualizado el <time datetime="{{ .Lastmod.Format " 2006-01-02T15:04:05Z0700" }}">{{ .Lastmod.Format "2006-01-02" }}</time></p>
+  <p class="is-size-7 my-2">Escrito por una persona el <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z0700" }}">{{ .Date.Format "2006-01-02"}}</time> y actualizado el <time datetime="{{ .Lastmod.Format " 2006-01-02T15:04:05Z0700" }}">{{ .Lastmod.Format "2006-01-02" }}</time></p>
   <div class="content is-dark is-4 mt-4 is-size-5">{{ .Content }}</div>
 </article>
 
