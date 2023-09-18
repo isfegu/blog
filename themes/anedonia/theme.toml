@@ -1,14 +1,14 @@
-name = "Hyde"
-license = "MIT"
-licenselink = "https://github.com/spf13/hyde/blob/master/LICENSE.md"
+name = "Anedonia"
+license = "CC BY-NC 4.0"
+licenselink = "https://github.com/isfegu/anedonia.website/blob/master/LICENSE.md"
 description = "An elegant open source and mobile first theme"
-tags = ["blog", "company"]
-features = ["blog", "themes", "disqus"]
+tags = ["blog"]
+features = ["blog", "themes"]
 min_version = 0.53
 
 [author]
-    name = "spf13"
-    homepage = "http://spf13.com"
+    name = "isfegu"
+    homepage = "https://anedonia.website"
 
 # If Porting existing theme
 [original]
