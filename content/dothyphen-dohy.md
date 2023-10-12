@@ -9,7 +9,7 @@ tags = ['rust', 'ffi']
 
 > Ésta es la primera de una serie de anotaciones en las que iré explicando cómo usar una librería desarrollada en Rust desde otros lenguajes. Esta interoperabilidad con otros lenguajes es conocida como [FFI](https://en.wikipedia.org/wiki/Foreign_function_interface) (Foreign Function Interface).
 >
-> * Parte 1: DotHyphen y DoHy: De ASCII a Morse y de Morse a ASCII usando Rust.
+> * Parte 1: __DotHyphen y DoHy: De ASCII a Morse y de Morse a ASCII usando Rust.__
 >
 > Puesto que no soy ningún experto en la materia aviso que este escrito puede contener errores. Como sigo estudiando y aprendiendo lo iré corrigiendo y ampliando. También aviso que he simplificado algunas secciones para facilitar alguna explicación y mi propio entendimiento.
 
