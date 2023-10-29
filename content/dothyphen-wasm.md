@@ -88,7 +88,7 @@ wasm-pack build
 
 Ahora tendríamos un directorio `pkg` con los siguientes archivos:
 
-```plain
+```txt
 pkg/
 ├── package.json
 ├── README.md
