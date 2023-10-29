@@ -16,3 +16,13 @@ HUGO_ENABLEGITINFO = "true"
   from = "/paleta-colores-nord-ilustraciones-svg-gratis/"
   to = "/"
   status = 410
+
+  [[redirects]]
+  from = "/dotyyphen-dohy-ascii-morse-rust/"
+  to = "/dothyphen-dohy-ascii-morse-rust/"
+  status = 301
+
+  [[redirects]]
+  from = "/dotyyphen-ascii-morse-rust-webassembly-wasi/"
+  to = "/dothyphen-ascii-morse-rust-webassembly-wasi/"
+  status = 301

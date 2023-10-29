@@ -1,7 +1,7 @@
 +++
 title = "DotHyphen y DoHy: De ASCII a Morse y de Morse a ASCII usando Rust"
 summary = "Ésta es la primera de una serie de anotaciones en las que iré explicando cómo usar una librería desarrollada en Rust desde otros lenguajes. Esta interoperabilidad con otros lenguajes es conocida como FFI (Foreign Function Interface)."
-slug = "dotyyphen-dohy-ascii-morse-rust"
+slug = "dothyphen-dohy-ascii-morse-rust"
 date = "2023-09-24"
 categories = ['rust']
 tags = ['rust', 'ffi']
@@ -9,7 +9,9 @@ tags = ['rust', 'ffi']
 
 > Ésta es la primera de una serie de anotaciones en las que iré explicando cómo usar una librería desarrollada en Rust desde otros lenguajes. Esta interoperabilidad con otros lenguajes es conocida como [FFI](https://en.wikipedia.org/wiki/Foreign_function_interface) (Foreign Function Interface).
 >
-> * Parte 1: __DotHyphen y DoHy: De ASCII a Morse y de Morse a ASCII usando Rust.__
+> 1. __DotHyphen y DoHy: De ASCII a Morse y de Morse a ASCII usando Rust.__
+> 2. [DotHyphen WebAssembly: De ASCII a Morse y de Morse a ASCII usando WebAssembly (I)](/dothyphen-ascii-morse-rust-webassembly-wasi/).
+> 3. [DotHyphen WebAssembly: De ASCII a Morse y de Morse a ASCII usando WebAssembly (II)](/dothyphen-ascii-morse-webassembly-javascript/).
 >
 > Puesto que no soy ningún experto en la materia aviso que este escrito puede contener errores. Como sigo estudiando y aprendiendo lo iré corrigiendo y ampliando. También aviso que he simplificado algunas secciones para facilitar alguna explicación y mi propio entendimiento.
 
