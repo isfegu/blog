@@ -23,7 +23,7 @@ Este blog se publica en [Netlify](https://netlify.com/) de forma automática cad
 
 Cualquier aportación, a modo de _pull request_ será bienvenida. Este repositorio utiliza [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
-Una vez se tiene el [entorno de desarrollo](#Development) se puede contribuir de dos formas, mejorando el aspecto visual o mejorando/aportando contenidos.
+Una vez se tiene el [entorno de desarrollo](#desarrollo) se puede contribuir de dos formas, mejorando el aspecto visual o mejorando/aportando contenidos.
 
 ### Aspecto visual
 

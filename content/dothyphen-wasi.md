@@ -12,6 +12,7 @@ tags = ['rust', 'webassembly', 'wasi', 'ffi']
 > 1. [DotHyphen y DoHy: De ASCII a Morse y de Morse a ASCII usando Rust](/dothyphen-dohy-ascii-morse-rust/).
 > 2. __DotHyphen WebAssembly: De ASCII a Morse y de Morse a ASCII usando WebAssembly (I).__
 > 3. [DotHyphen WebAssembly: De ASCII a Morse y de Morse a ASCII usando WebAssembly (II)](/dothyphen-ascii-morse-webassembly-javascript/).
+> 4. [DotHyphen C: De ASCII a Morse y de Morse a ASCII usando C/C++](/dothyphen-ascii-morse-c-c++/).
 >
 > Puesto que no soy ningún experto en la materia aviso que este escrito puede contener errores. Como sigo estudiando y aprendiendo lo iré corrigiendo y ampliando. También aviso que he simplificado algunas secciones para facilitar alguna explicación y mi propio entendimiento.
 

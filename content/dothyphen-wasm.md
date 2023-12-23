@@ -12,6 +12,7 @@ tags = ['rust', 'webassembly', 'ffi', 'javascript', 'nodejs']
 > 1. [DotHyphen y DoHy: De ASCII a Morse y de Morse a ASCII usando Rust](/dothyphen-dohy-ascii-morse-rust/).
 > 2. [DotHyphen WebAssembly: De ASCII a Morse y de Morse a ASCII usando WebAssembly (I)](/dothyphen-ascii-morse-rust-webassembly-wasi/).
 > 3. __DotHyphen WebAssembly: De ASCII a Morse y de Morse a ASCII usando WebAssembly (II).__
+> 4. [DotHyphen C: De ASCII a Morse y de Morse a ASCII usando C/C++](/dothyphen-ascii-morse-c-c++/).
 >
 > Puesto que no soy ningún experto en la materia aviso que este escrito puede contener errores. Como sigo estudiando y aprendiendo lo iré corrigiendo y ampliando. También aviso que he simplificado algunas secciones para facilitar alguna explicación y mi propio entendimiento.
 
@@ -101,7 +102,7 @@ El mejor ejemplo de cómo funciona lo explicado es viendo _DotHyphen WebAssembly
 
 ## DotHyphen WebAssembly
 
-Para poder ofrecer _DotHyphen_ como paquete WebAssembly que pueda ser usado desde un ecosistema Javascript he añadido un _member_ al _workspace_ llamado `dothyphe-wasm`, que es un _crate_ de tipo _lib_ que tiene como dependencia `dothyphen`.
+Para poder ofrecer _DotHyphen_ como paquete WebAssembly que pueda ser usado desde un ecosistema Javascript he añadido un _member_ al _workspace_ llamado `dothyphen-wasm`, que es un _crate_ de tipo _lib_ que tiene como dependencia `dothyphen`.
 
 El resultado es un paquete WebAssembly que puede ser utilizado desde un código Javascript ejecutado desde un navegador:
 
